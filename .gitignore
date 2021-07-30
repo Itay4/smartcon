@@ -1,2 +1,12 @@
+# pdm
 __pypackages__
 .pdm.toml
+
+# brownie
+__pycache__
+.history
+.hypothesis/
+build/
+reports/
+.pytest_cache
+conftest.py
