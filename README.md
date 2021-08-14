@@ -5,19 +5,8 @@
 
 ## Prerequisites
 
-Install [genash-cli](https://github.com/trufflesuite/ganache-cli):
-
-Using npm:
-
-```bash
-npm install -g ganache-cli
-```
-
-or, if you are using [Yarn](https://yarnpkg.com/):
-
-```bash
-yarn global add ganache-cli
-```
+1. Install [genash-cli](https://github.com/trufflesuite/ganache-cli)
+2. Install [PDM](https://github.com/pdm-project/pdm) and run `pdm sync`
 
 ## Usage
 
