@@ -31,16 +31,16 @@ jobs:
     - name: Install Ganache
       run: npm install -g ganache-cli@6.10.1
 
-    - name: Setup Python 3.9
-      uses: actions/setup-python@v2
+    - uses: pdm-project/setup-pdm@v2.1
+      name: Setup PDM
       with:
         python-version: 3.9
-
-    - name: Install PDM
-      run: curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python -
+        architecture: x64
+        version: 1.7.2
+        enable-pep582: true
     
     - name: Install dependencies
-      run: pdm sync
+      run: pdm install
     
     - name: Run Tests
       run: pdm run brownie test -C
