@@ -1,6 +1,5 @@
 on:
   push:
-  pull_request:
   schedule:
     # run this workflow every Monday at 1PM UTC
     - cron: "* 13 * * 1"
@@ -41,7 +40,7 @@ jobs:
       run: curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python -
     
     - name: Install dependencies
-      run: pdm install
+      run: pdm sync
     
     - name: Run Tests
       run: pdm run brownie test -C
