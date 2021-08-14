@@ -9,4 +9,3 @@ __pycache__
 build/
 reports/
 .pytest_cache
-conftest.py
