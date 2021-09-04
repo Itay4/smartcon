@@ -16,9 +16,15 @@ license = {text = "MIT"}
 [project.urls]
 homepage = ""
 
+
+[project.optional-dependencies]
 [build-system]
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
 [tool]
 [tool.pdm]
+[tool.pdm.dev-dependencies]
+workflow = [
+    "mypy~=0.910",
+]
