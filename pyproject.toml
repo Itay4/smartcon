@@ -25,6 +25,4 @@ build-backend = "pdm.pep517.api"
 [tool]
 [tool.pdm]
 [tool.pdm.dev-dependencies]
-workflow = [
-    "mypy~=0.910",
-]
+workflow = []
