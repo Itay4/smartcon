@@ -11,6 +11,7 @@ repos:
     rev: 3.9.2
     hooks:
       - id: flake8
+        args: [--max-line-length=100]
         additional_dependencies:
           - flake8-bugbear
 
@@ -23,8 +24,3 @@ repos:
     rev: v0.910
     hooks:
       - id: mypy
-        args: [pdm]
-        pass_filenames: false
-        additional_dependencies:
-          - types-setuptools
-          - types-toml
