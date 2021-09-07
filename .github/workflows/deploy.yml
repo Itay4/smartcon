@@ -1,0 +1,45 @@
+on:
+  push:
+
+name: deploy
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  WEB3_INFURA_PROJECT_ID: ${{ secrets.WEB3_INFURA_PROJECT_ID }}
+  PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache Compiler Installations
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.solcx
+          ~/.vvm
+        key: compiler-cache
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+
+    - name: Install Ganache
+      run: npm install -g ganache-cli@6.10.1
+
+    - uses: pdm-project/setup-pdm@v2.1
+      name: Setup PDM
+      with:
+        python-version: 3.9
+        architecture: x64
+        version: 1.7.2
+        enable-pep582: true
+    
+    - name: Install dependencies
+      run: pdm install
+    
+    - name: Run Tests
+      run: pdm run brownie run scripts/token.py --network kovan

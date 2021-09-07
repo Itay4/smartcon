@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
-from brownie import Token, accounts
+from brownie import Token, accounts, config
 
 
 def main():
-    return Token.deploy("Test Token", "TST", 18, 1e21, {"from": accounts[0]})
+    acct = accounts.add(
+        config["wallets"]["from_key"],
+    )
+    return Token.deploy("Test Token", "TST", 18, 1e21, {"from": acct})
