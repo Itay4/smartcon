@@ -41,5 +41,5 @@ jobs:
     - name: Install dependencies
       run: pdm install
     
-    - name: Run Tests
+    - name: Deploy
       run: pdm run brownie run scripts/token.py --network kovan
