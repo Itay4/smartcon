@@ -7,6 +7,27 @@
 
 1. Install [genash-cli](https://github.com/trufflesuite/ganache-cli)
 2. Install [PDM](https://github.com/pdm-project/pdm) and run `pdm sync`
+3. If you want to be able to deploy to testnets, do the following:
+
+    Set your WEB3_INFURA_PROJECT_ID, and PRIVATE_KEY environment variables.
+
+    You can get a WEB3_INFURA_PROJECT_ID by getting a free trial of Infura. At the moment, it does need to be infura with brownie. If you get lost, follow the instructions at https://ethereumico.io/knowledge-base/infura-api-key-guide/. You can find your PRIVATE_KEY from your ethereum wallet like metamask.
+
+    You'll also need testnet ETH. You can get ETH into your wallet by using the faucet for the appropriate
+    testnet.
+    For Kovan, available faucets:
+     - https://linkfaucet.protofire.io/kovan
+     - https://ethdrop.dev
+
+    You can add your environment variables to a .env file. You can use the .env_example in this repo 
+    as a template, just fill in the values and rename it to '.env'. 
+
+    Here is what your .env should look like:
+
+    ```bash
+    export WEB3_INFURA_PROJECT_ID=<PROJECT_ID>
+    export PRIVATE_KEY=<PRIVATE_KEY>
+    ```
 
 ## Usage
 
@@ -42,6 +63,14 @@ Transaction sent: 0xb94b219148501a269020158320d543946a4e7b9fac294b17164252a13dce
   Token.transfer confirmed - Block: 2   Gas used: 51668 (0.43%)
 
 <Transaction '0xb94b219148501a269020158320d543946a4e7b9fac294b17164252a13dce9534'>
+```
+
+## Deploying to a Live Network
+
+Assuming you followed step 3 in the prerequisites, then:
+
+```bash
+pdm run brownie run deploy --network kovan
 ```
 
 ## Testing
