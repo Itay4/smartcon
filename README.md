@@ -82,6 +82,6 @@ pdm run brownie test
 ```
 
 ## pre-commit
-We use are using [pre-commit](https://pre-commit.com/):
+We are using [pre-commit](https://pre-commit.com/):
 1. Install hook to be performed as a hook before commit changes - `pre-commit install`
 2. In order to run pre-commit without commit- `pre-commit run -a` (on all files), `pre-commit run` (on staged files)
