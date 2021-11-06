@@ -1,7 +1,7 @@
 # smartcon
 
 [![pdm-managed](https://img.shields.io/badge/pdm-managed-blueviolet)](https://pdm.fming.dev)
-
+[![GitHub Super-Linter](https://github.com/itay4/smartcon/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## Prerequisites
 
@@ -11,16 +11,16 @@
 
     Set your WEB3_INFURA_PROJECT_ID, and PRIVATE_KEY environment variables.
 
-    You can get a WEB3_INFURA_PROJECT_ID by getting a free trial of Infura. At the moment, it does need to be infura with brownie. If you get lost, follow the instructions at https://ethereumico.io/knowledge-base/infura-api-key-guide/. You can find your PRIVATE_KEY from your ethereum wallet like metamask.
+    You can get a WEB3_INFURA_PROJECT_ID by getting a free trial of Infura. At the moment, it does need to be infura with brownie. If you get lost, follow the instructions [here](https://ethereumico.io/knowledge-base/infura-api-key-guide/). You can find your PRIVATE_KEY from your ethereum wallet like metamask.
 
     You'll also need testnet ETH. You can get ETH into your wallet by using the faucet for the appropriate
     testnet.
     For Kovan, available faucets:
-     - https://linkfaucet.protofire.io/kovan
-     - https://ethdrop.dev
+     - [Chainlink](https://linkfaucet.protofire.io/kovan)
+     - [ethdrop](https://ethdrop.dev)
 
-    You can add your environment variables to a .env file. You can use the .env_example in this repo 
-    as a template, just fill in the values and rename it to '.env'. 
+    You can add your environment variables to a .env file. You can use the .env_example in this repo
+    as a template, just fill in the values and rename it to '.env'.
 
     Here is what your .env should look like:
 
