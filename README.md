@@ -1,7 +1,7 @@
 # smartcon
 
-[![pdm-managed](https://img.shields.io/badge/pdm-managed-blueviolet)](https://pdm.fming.dev)
-
+[![pdm-managed](https://img.shields.io/badge/pdm-managed-blueviolet)](https://pdm.fming.dev) 
+[![GitHub Super-Linter](https://github.com/itay4/smartcon/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## Prerequisites
 
