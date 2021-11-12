@@ -4,7 +4,7 @@ on:
   push:
   schedule:
     # run this workflow every Monday at 1PM UTC
-    - cron: "* 13 * * 1"
+    - cron: "0 13 * * 1"
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -26,10 +26,10 @@ jobs:
         key: compiler-cache
 
     - name: Setup Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2.4.1
 
     - name: Install Ganache
-      run: npm install -g ganache-cli@6.10.1
+      run: npm install -g ganache-cli@6.12.2
 
     - uses: pdm-project/setup-pdm@v2.1
       name: Setup PDM
