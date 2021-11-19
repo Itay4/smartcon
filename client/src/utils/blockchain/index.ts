@@ -72,7 +72,7 @@ export const listTrainerPokemons = async (
   contract?: undefined
 ) => {
   const pokemonTrainerContract = window.pokemonTrainerContract || contract
-  let promiseArr = []
+  const promiseArr = []
   for (let i = 0; i < pokemonCount; i++) {
     promiseArr.push(
       pokemonTrainerContract.methods
@@ -90,7 +90,7 @@ export const listTrainerPokemons = async (
       name: utils.parseBytes32String(pokemon.name),
       dna: pokemon.dna,
       HP: pokemon.HP,
-      pokemonIndex: index,
+      pokemonIndex: index
     })
   ))
 
