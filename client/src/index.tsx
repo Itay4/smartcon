@@ -4,6 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+declare global {
+  interface Window {
+    store:any;
+    pokemonTrainerContract:any;
+    web3:any;
+    pokemonBattleContract:any;
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
