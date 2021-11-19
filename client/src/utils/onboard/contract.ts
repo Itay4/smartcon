@@ -15,6 +15,7 @@ export const POKEMON_TRAINER_ABI = [
     anonymous: false,
     type: 'event'
   },
+  /* jscpd:ignore-start */
   {
     name: 'NewBattle',
     inputs: [
@@ -27,6 +28,7 @@ export const POKEMON_TRAINER_ABI = [
     anonymous: false,
     type: 'event'
   },
+  /* jscpd:ignore-end */
   {
     name: 'battleWildPokemon',
     outputs: [],
@@ -49,11 +51,13 @@ export const POKEMON_TRAINER_ABI = [
   {
     name: 'listTrainerPokemon',
     outputs: [
+      /* jscpd:ignore-start */
       { type: 'bytes32', name: 'name' },
       { type: 'uint256', name: 'dna' },
       { type: 'uint256', name: 'HP' },
       { type: 'uint256', name: 'matches' },
       { type: 'uint256', name: 'wins' }
+      /* jscpd:ignore-end */
     ],
     inputs: [{ type: 'uint256', name: 'pokemonIndex' }],
     stateMutability: 'view',
