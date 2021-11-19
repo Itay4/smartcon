@@ -75,7 +75,7 @@ export const startBattle = (payload: { history: string[]; address: any; pokemonI
           payload: pokemons
         })
       })
-    });
+    })
   })
 }
 
@@ -91,7 +91,6 @@ export const getTrainerPokemons = (payload: { address: any; pokemonCount: number
   })
   listTrainerPokemons(payload.address, payload.pokemonCount!).then(
     (pokemons) => {
-
       dispatch({
         type: types.SET_POKEMONS,
         payload: pokemons
@@ -107,7 +106,6 @@ export const listPokemonsByAddress = (payload: { address: any; contract: undefin
   trainerPokemonCount(payload.address, payload.contract).then((count) => {
     listTrainerPokemons(payload.address, count!, payload.contract).then(
       (pokemons) => {
-
         dispatch({
           type: types.SET_POKEMONS,
           payload: pokemons
