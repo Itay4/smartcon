@@ -1,4 +1,4 @@
-const ethers = require("ethers");
+const ethers = require('ethers');
 const utils = ethers.utils;
 
 export const createTrainer = async (userAddress: any, trainerName: any, pokemonName: any) => {
@@ -20,7 +20,7 @@ export const createTrainer = async (userAddress: any, trainerName: any, pokemonN
         HP: res.HP,
       };
       console.log(
-        "Create Trainer: " +
+        'Create Trainer: ' +
           JSON.stringify(logs.events.NewPokemonCreated.returnValues)
       );
     });
@@ -60,7 +60,7 @@ export const trainerPokemonCount = async (userAddress: any, contract?: undefined
     .trainerPokemonCount(userAddress)
     .call({ from: userAddress })
     .then(async (logs: string) => {
-      console.log("Trainer Pokemon Count: " + logs);
+      console.log('Trainer Pokemon Count: ' + logs);
       result = logs;
     });
   return result;

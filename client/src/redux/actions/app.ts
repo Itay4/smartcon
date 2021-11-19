@@ -1,13 +1,13 @@
-import { types } from "../constants";
+import { types } from '../constants';
 import {
   battle,
   createTrainer,
   trainerPokemonCount,
   listTrainerPokemons,
-} from "../../utils/blockchain";
+} from '../../utils/blockchain';
 
 export const sendToLoginPage = (payload: { history: string[]; }) => () => {
-  payload.history.push("/");
+  payload.history.push('/');
 };
 
 export const setLoadingGif = () => (dispatch: (arg0: { type: string; }) => void) => {
@@ -32,7 +32,7 @@ export const login = (payload: { user: { address: any; }; history: string[]; }) 
         type: types.LOGIN,
         payload: payload.user,
       });
-      payload.history.push("/pick-a-pokemon");
+      payload.history.push('/pick-a-pokemon');
     }
   });
 };
@@ -43,7 +43,7 @@ export const choosePokemon = (payload: { address: any; trainerName: any; pokemon
   });
   createTrainer(payload.address, payload.trainerName, payload.pokemonName).then(
     (data) => {
-      console.log("Choose Pokemon: ", data);
+      console.log('Choose Pokemon: ', data);
       dispatch({
         type: types.ADD_POKEMON,
         payload: {
@@ -51,13 +51,13 @@ export const choosePokemon = (payload: { address: any; trainerName: any; pokemon
           pokemonCount: 1,
         },
       });
-      payload.history.push("/my-pokemons");
+      payload.history.push('/my-pokemons');
     }
   );
 };
 
 export const startBattle = (payload: { history: string[]; address: any; pokemonIndex: any; }) => (dispatch: (arg0: { type: string; payload?: { name: any; dna: any; HP: any; pokemonIndex: number; }[] | undefined; }) => void) => {
-  payload.history.push("/battle");
+  payload.history.push('/battle');
 
   dispatch({
     type: types.LOADING,
@@ -81,7 +81,7 @@ export const startBattle = (payload: { history: string[]; address: any; pokemonI
 
 export const getTrainerPokemonCount = (payload: { address: any; }) => (dispatch: any) => {
   trainerPokemonCount(payload.address).then((data) => {
-    console.log("getTrainerPokemonCount: ", data);
+    console.log('getTrainerPokemonCount: ', data);
   });
 };
 
