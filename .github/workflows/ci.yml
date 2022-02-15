@@ -31,7 +31,7 @@ jobs:
     - name: Install Ganache
       run: npm install -g ganache-cli@6.12.2
 
-    - uses: pdm-project/setup-pdm@v2.5
+    - uses: pdm-project/setup-pdm@v2.6
       name: Setup PDM
       with:
         python-version: 3.9
